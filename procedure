@@ -1,0 +1,29 @@
+Accessing DiskPart:
+
+DiskPart is accessed through the Command Prompt or PowerShell by typing diskpart and pressing Enter. This launches the DiskPart command-line interface (CLI).
+Basic Commands:
+
+list disk: Displays a list of all disks connected to the system along with their sizes and free space.
+select disk <disk number>: Selects a disk for performing operations. Replace <disk number> with the actual disk number listed from list disk.
+list volume: Lists all volumes (partitions) on the selected disk.
+select volume <volume number>: Selects a volume to operate on. Use <volume number> based on the output of list volume.
+Partition Management:
+
+create partition primary size=<size in MB>: Creates a primary partition with the specified size.
+delete partition override: Deletes the selected partition. Use override to force deletion of system partitions.
+format fs=<file system>: Formats the selected partition with the specified file system (e.g., NTFS, FAT32).
+Additional Commands:
+
+clean: Removes all partition or volume formatting from the selected disk, making it uninitialized.
+extend: Extends the size of the selected volume into contiguous, unallocated space on the same disk.
+shrink desired=<size in MB>: Reduces the size of the selected volume by the specified amount, creating unallocated space.
+Advanced Features:
+
+convert gpt or convert mbr: Converts the selected disk to GPT (GUID Partition Table) or MBR (Master Boot Record) partition style, respectively.
+assign letter=<drive letter>: Assigns a drive letter to the selected volume.
+Exiting DiskPart:
+
+exit: Quits the DiskPart utility. Ensure all operations are completed before exiting to avoid data loss.
+Caution:
+
+DiskPart commands can have significant consequences on data integrity. Verify commands and selections carefully before proceeding, especially with commands like clean or delete partition.
