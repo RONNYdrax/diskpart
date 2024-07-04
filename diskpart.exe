@@ -1,0 +1,10 @@
+open cmd  ///// admistrative mode 
+in terminal 
+write diskpart  //// disk partion will execute 
+list disk //// it will show all the drives connected or plugged in the pc
+select disk <number>   select disk number which you want to operate
+clean  <clean the disk for errors>
+create partion primary  <this would create partition >
+format fs=ntfs  //// ehich kind of partiton you want to create
+ exit
+you are done with partion and creating a new volume
